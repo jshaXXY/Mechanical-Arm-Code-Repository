@@ -1,12 +1,14 @@
-import math;
-x1=float(input("x1="));
-y1=float(input("y1="));
-r=math.sqrt(x1*x1+y1*y1);
-h1=float(input("h1="));
-h2=float(input("h2="));
-l3=float(input("l3="));
-l4=float(input("l4="));
+import math
 from scipy.optimize import fsolve
+
+x1=float(input("x1="))
+y1=float(input("y1="))
+r=math.sqrt(x1*x1+y1*y1)
+h1=float(input("h1="))
+h2=float(input("h2="))
+l3=float(input("l3="))
+l4=float(input("l4="))
+
  
 def solve_function(unsolved_value):
     x,y,p,q=unsolved_value[0],unsolved_value[1],unsolved_value[2],unsolved_value[3]
