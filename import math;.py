@@ -2,11 +2,11 @@ import math;
 x1=float(input("x1="));
 y1=float(input("y1="));
 r=math.sqrt(x1*x1+y1*y1);
-h1=float(input("h1="));
-h2=float(input("h2="));
-l2=float(input("l2="));
-l3=float(input("l3="));
-l4=float(input("l4="));
+h1=6.7;
+h2=9;
+l2=7.7;
+l3=9.8;
+l4=9.8;
 from scipy.optimize import fsolve
  
 def solve_function(unsolved_value):
