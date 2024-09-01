@@ -1,7 +1,6 @@
 import math;
-x1=float(input("x1="));
-y1=float(input("y1="));
-r=math.sqrt(x1*x1+y1*y1);
+pi=3.1415
+r=float(input("r="));
 h1=6.7;
 h2=9;
 l2=7.7;
@@ -20,7 +19,7 @@ def solve_function(unsolved_value):
  
 solved=fsolve(solve_function,[0, 0, 0, 0])
 print(solved)
-print(math.acos(solved[0]))
-print(math.acos(solved[2])) 
+print(math.acos(solved[0])*180/pi)
+print(math.acos(solved[2])*180/pi) 
  
 print("Program done!")
