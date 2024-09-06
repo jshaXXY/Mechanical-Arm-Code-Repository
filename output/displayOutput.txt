@@ -1,1 +1,1 @@
-Detected red cube at (416, 204)
+Detected red cube at (397, 290)

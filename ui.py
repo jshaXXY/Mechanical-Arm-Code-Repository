@@ -8,7 +8,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle('PyQt Image, Text, and Button Example')
+        self.setWindowTitle('UI')
         self.setGeometry(100, 100, 800, 800)
 
         # 创建中心Widget和布局
@@ -28,12 +28,16 @@ class MainWindow(QMainWindow):
         self.load_text('output/displayOutput.txt')  # 加载初始文本
 
         # 下半部分：按钮
-        self.button = QPushButton('Refresh Image and Text', self)
-        self.button.clicked.connect(self.refresh_image_and_text)
+        self.button1 = QPushButton('Refresh Image and Text', self)
+        self.button1.clicked.connect(self.refresh_image_and_text1)
+        
+        self.button2 = QPushButton('Perform', self)
+        self.button2.clicked.connect(self.refresh_image_and_text2)
 
         layout.addWidget(self.image_label)
         layout.addWidget(self.text_edit)
-        layout.addWidget(self.button)
+        layout.addWidget(self.button1)
+        layout.addWidget(self.button2)
 
     def load_image(self, image_path):
         pixmap = QPixmap(image_path)
@@ -43,7 +47,7 @@ class MainWindow(QMainWindow):
         with open(text_file_path, 'r') as file:
             self.text_edit.setText(file.read())
 
-    def refresh_image_and_text(self):
+    def refresh_image_and_text1(self):
         # 执行外部Python脚本
         subprocess.run(['python', 'detect.py'], check=True)
 
@@ -52,6 +56,10 @@ class MainWindow(QMainWindow):
 
         # 刷新文本
         self.load_text('output/displayOutput.txt')
+        
+    def refresh_image_and_text2(self):
+        # 执行外部Python脚本
+        subprocess.run(['python', 'process.py'], check=True)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
